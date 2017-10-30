@@ -1,7 +1,7 @@
 {
     "name": "treee-project",
     "version": "0.0.1",
-    "description": "Build system for my-app.",
+    "description": "Build system for treee-app.",
     "main": "./js/builder.js",
     "scripts": {
         "start": "concurrently \"npm run coffee\" \"npm run app\"",

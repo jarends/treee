@@ -1,2 +1,2 @@
 # treee
-Json Schema editor and form generator
+Json schema editor and form generator
