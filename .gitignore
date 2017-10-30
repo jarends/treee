@@ -1,0 +1,11 @@
+.idea
+.DS_Store
+/node_modules
+/build
+/npm-debug.log
+/app/examples
+/app/js
+/app/node_modules/.bin
+/app/node_modules
+/app/css
+/js
