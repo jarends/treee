@@ -1,0 +1,294 @@
+$font-family: Menlo, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+$fa-font-path: "../node_modules/font-awesome/fonts" !default;
+$win-border-color: #333333;
+
+@import "../node_modules/font-awesome/scss/font-awesome";
+@import "./prism";
+@import "./editor";
+@import "./tree-view";
+@import "./resizer";
+
+$toolbar-height: 30px;
+
+/*
+//     0000000   0000000   00     00  00     00   0000000   000   000
+//    000       000   000  000   000  000   000  000   000  0000  000
+//    000       000   000  000000000  000000000  000   000  000 0 000
+//    000       000   000  000 0 000  000 0 000  000   000  000  0000
+//     0000000   0000000   000   000  000   000   0000000   000   000
+*/
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body, pre, code {
+    font-family: $font-family
+}
+
+html,
+body {
+    font-family: $font-family;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: normal;
+    color: #ffffff;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #282828;
+}
+
+::-webkit-scrollbar {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    box-sizing: border-box;
+    background: #666666;
+    border: 4px solid #282828;
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar-corner {
+    background: rgba(0, 0, 0, 0);
+}
+
+ul {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-padding-before: 0;
+    -webkit-padding-after: 0;
+}
+
+/*
+//     0000000   00000000   00000000 
+//    000   000  000   000  000   000
+//    000000000  00000000   00000000 
+//    000   000  000        000      
+//    000   000  000        000      
+*/
+
+.app {
+    width: 100%;
+    height: 100%;
+}
+
+.window {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.toolbar {
+    width: 100%;
+    height: $toolbar-height;
+    background-color: #222222;
+    border-bottom: 1px solid $win-border-color;
+    outline: none;
+}
+
+.content {
+    position: absolute;
+    top: $toolbar-height;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.panel {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+iframe {
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*
+//    000000000  00000000   00000000  00000000
+//       000     000   000  000       000     
+//       000     0000000    0000000   0000000 
+//       000     000   000  000       000     
+//       000     000   000  00000000  00000000
+*/
+/*
+.tree-view {
+    height: 100%;
+    overflow: auto;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 10px;
+}
+
+.node-view {
+    list-style: none;
+    padding-left: 10px;
+    padding-bottom: 10px;
+
+    //font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    //font-size: 12px;
+
+    .operator {
+        cursor: pointer;
+        position: relative;
+        &:before {
+            position: absolute;
+            left: -10px;
+        }
+    }
+
+    &.expanded {
+        .operator:before {
+            content: '+';
+        }
+    }
+
+    &.collapsed {
+        .operator:before {
+            content: '-';
+        }
+    }
+
+    .label {
+    }
+
+    .node-view-children {
+        list-style: none;
+        margin-left: 0;
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.file-tree-view {
+    .tree-renderer {
+
+        height: auto;
+
+        > span {
+           overflow: visible;
+        }
+
+        .fa {
+            position: relative;
+            vertical-align: middle;
+            width: 15px;
+        }
+
+        .tree-renderer-icon {
+            width: auto;
+            padding-right: 10px;
+            font-size: 11px;
+        }
+
+        .tree-renderer-label {
+            width: auto;
+            color: $label-color;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+//     0000000   0000000  000   000  00000000  00     00   0000000 
+//    000       000       000   000  000       000   000  000   000
+//    0000000   000       000000000  0000000   000000000  000000000
+//         000  000       000   000  000       000 0 000  000   000
+//    0000000    0000000  000   000  00000000  000   000  000   000
+*/
+
+.schema-list {
+    height: 100%;
+    overflow: auto;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 10px;
+}
+
+.schema-item {
+    padding-bottom: 10px;
+}
+
+.prop-list {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 10px;
+}
+
+.prop-item {
+
+}
+
+/*
+//    0000000    000000 
+//    000   000      000
+//    000   000    0000 
+//    000   000      000
+//    0000000    000000 
+*/
+
+.node circle {
+    fill: #fff;
+    stroke: #0000FF;
+    stroke-width: 2px;
+}
+
+.node text {
+    font: 12px sans-serif;
+    fill: darkOrange;
+    user-select: none;
+}
+
+.link {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2px;
+}
+
+
+
+
+

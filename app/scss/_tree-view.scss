@@ -1,0 +1,106 @@
+$index-color:  #666666;
+$label-color:  #FFFFFF;
+$value-color:  #FF9900;
+$border-color: #333333;
+$background-color-selected: #3366FF;
+
+.tree-view {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    font-family: Menlo, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 11px;
+    font-weight: normal;
+    pointer-events: auto;
+    border-right: 1px solid #000000;
+    outline: none;
+    //background-color: $border-color;
+}
+
+.tree-view-content {
+    height: 0px;
+    width: 100%;
+    pointer-events: auto;
+    border-right: 1px solid $border-color;
+    //background-color: $border-color;
+}
+
+.tree-renderer {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    //background-color: $background-color;
+    border-bottom: 1px solid $border-color;
+    height: 20px;
+    line-height: 20px;
+    width: 100%;
+    white-space: nowrap;
+
+/**/
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+}
+
+.tree-renderer span {
+    display: inline-block;
+    overflow: hidden;
+    word-wrap: normal;
+}
+
+.tree-renderer-index {
+    padding-left: 5px;
+    width: 50px;
+    font-size: 10px;
+    color: $index-color;
+    border-right: 1px solid $border-color;
+}
+
+.tree-renderer-icon {
+    width: 25px;
+    font-size: 8px;
+}
+
+.tree-renderer-icon::before {
+    content: "▶";
+}
+
+.tree-renderer-expanded::before {
+    content: "▼";
+}
+
+.tree-renderer-label {
+    width: 140px;
+    color: $label-color;
+}
+
+.tree-renderer-value {
+     margin-left: 20px;
+     color: $value-color
+}
+
+.tree-renderer-current-selected .tree-renderer-value, .tree-renderer-selected .tree-renderer-value {
+    color: #FFFFFF;
+}
+
+.tree-renderer-no-expand {
+    visibility: hidden;
+}
+
+.tree-renderer-active {
+    background-color: $background-color-selected;
+    color: #FF9900;
+}
+
+.tree-renderer-selected {
+    background-color: darken($background-color-selected, 20%);
+    color: #FFFFFF;
+}
+
+.tree-renderer-selected.tree-renderer-active {
+    background-color: darken($background-color-selected, 20%);
+    color: #FF9900;
+}

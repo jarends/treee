@@ -1,0 +1,29 @@
+{
+    "name": "treee-project",
+    "version": "0.0.1",
+    "description": "Build system for my-app.",
+    "main": "./js/builder.js",
+    "scripts": {
+        "start": "concurrently \"npm run coffee\" \"npm run app\"",
+        "coffee": "coffee -c -w -o ./js ./coffee",
+        "app": "concurrently \"npm run app-coffee\" \"npm run app-sass\"",
+        "app-coffee": "coffee -c -w -m -o ./app/js ./app/coffee",
+        "app-sass": "node-sass --source-map true -o ./app/css ./app/scss && node-sass --source-map true -w -o ./app/css ./app/scss",
+        "run": "node .",
+        "open": "node . open",
+        "mac": "node . mac",
+        "win": "node . win",
+        "win32": "node . win32",
+        "win64": "node . win64",
+        "all": "node . all"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "coffee-script": "^1.12.7",
+        "concurrently": "^3.4.0",
+        "cross-spawn": "^5.1.0",
+        "electron": "^1.7.5",
+        "electron-packager": "^8.6.0",
+        "node-sass": "^4.5.2"
+    }
+}

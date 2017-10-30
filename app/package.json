@@ -1,0 +1,20 @@
+{
+  "name": "treee",
+  "version": "0.0.1",
+  "electron_version": "1.7.5",
+  "main": "./js/main/context.js",
+  "scripts": {
+    "tt": "npm uninstall two-trees && npm install"
+  },
+  "dependencies": {
+    "chokidar": "1.6.1",
+    "emap": "latest",
+    "font-awesome": "^4.7.0",
+    "fork-func": "git+https://git@github.com/jarends/fork-func.git#master",
+    "jsonschema": "^1.1.1",
+    "lodash": "^4.17.4",
+    "ppost": "^0.1.2",
+    "two-trees": "git+https://git@github.com/jarends/two-trees.git#master"
+  },
+  "devDependencies": {}
+}
